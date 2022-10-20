@@ -8,17 +8,17 @@ window.addEventListener("load", function() {
   function setToHidden(){
     console.log('setting elements to hidden');
     document.getElementById("side1").setAttribute("class", "hidden");
-    document.getElementById("side2").setAttribute("classs", "hidden");
-    document.getElementById("side3").setAttribute("classs", "hidden");
+    document.getElementById("side2").setAttribute("class", "hidden");
+    document.getElementById("side3").setAttribute("class", "hidden");
   }
   function whatTriangleIsIt (){
-    const side1 = document.querySelector("input#side1").value;
-    const side2 = document.querySelector("input#side2").value;
-    const side3 = document.querySelector("input#side3").value;
+    const side1 = parseInt(document.querySelector("input#side1").value);
+    const side2 = parseInt(document.querySelector("input#side2").value);
+    const side3 = parseInt(document.querySelector("input#side3").value);
     console.log(side1);
 
     if (side1 === side2 && side1 === side3){
-      document.parseInt(getElementById("equilateral").removeAttribute("class"));
+      document.getElementById("equilateral").removeAttribute("class");
     } else if (side1 == side2 || side1 == side3 || side2 == side3){
       document.getElementById("isosceles").removeAttribute("class");
     } else if (side1 || side2 || side3) {
@@ -28,10 +28,10 @@ window.addEventListener("load", function() {
     }
   }
   let form = document.querySelector("form");
-  form.addEventListener("submit", function(){
+  form.addEventListener("submit", function(e){
     //not sure it needs to say event.
     console.log('event listener happening');
-    event.preventDefault();
+    e.preventDefault();
     setToHidden();
     whatTriangleIsIt();
   })
