@@ -17,7 +17,7 @@ window.addEventListener("load", function() {
     const side2 = parseInt(document.querySelector("input#side2").value);
     const side3 = parseInt(document.querySelector("input#side3").value);
     console.log(side1);
-
+    
     if (side1 === side2 && side1 === side3){
       document.getElementById("equilateral").removeAttribute("class");
     } else if (side1 == side2 || side1 == side3 || side2 == side3){
@@ -36,7 +36,8 @@ window.addEventListener("load", function() {
     event.preventDefault();
     setToHidden();
     whatTriangleIsIt();
-  
+    form.reset();
+    
   })
 });
 
