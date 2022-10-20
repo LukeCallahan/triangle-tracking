@@ -7,9 +7,10 @@
 window.addEventListener("load", function() {
   function setToHidden(){
     console.log('setting elements to hidden');
-    document.getElementById("side1").setAttribute("class", "hidden");
-    document.getElementById("side2").setAttribute("class", "hidden");
-    document.getElementById("side3").setAttribute("class", "hidden");
+    document.getElementById("equilateral").setAttribute("class", "hidden");
+    document.getElementById("isosceles").setAttribute("class", "hidden");
+    document.getElementById("scalene").setAttribute("class", "hidden");
+    document.getElementById("not-a-triangle").setAttribute("class", "hidden");
   }
   function whatTriangleIsIt (){
     const side1 = parseInt(document.querySelector("input#side1").value);
@@ -27,13 +28,15 @@ window.addEventListener("load", function() {
       document.getElementById("not-a-triangle").removeAttribute("class");
     }
   }
+  
   let form = document.querySelector("form");
-  form.addEventListener("submit", function(e){
+  form.addEventListener("submit", function(event){
     //not sure it needs to say event.
     console.log('event listener happening');
-    e.preventDefault();
+    event.preventDefault();
     setToHidden();
     whatTriangleIsIt();
+  
   })
 });
 
